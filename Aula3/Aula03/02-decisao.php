@@ -69,8 +69,28 @@
         <li>Exibir a resposta da condicional simples com o comando echo no modo 1</li>
         <li>Exibir a resposta da condicional simples com o comando echo no modo 2</li>
     </ul>
+    <hr>
 
     <!-- Criar aqui seu programa PHP -->
+
+    <H3>EXERCÍCIO</H3>
+
+        <?php
+            $a = 5;
+            $b = 1;
+
+            if($a > $b) {
+                echo "True (Verdadeiro)";
+            } else {
+                echo "False (Falso)";
+            }
+
+            if($a > $b) 
+                echo "True (Verdadeiro)";
+            else 
+                echo "False (Falso)";
+        
+        ?>
     
     
     <hr>
@@ -88,7 +108,7 @@
     </ul>
     
     <br>
-    <h4>&nbsp;if ( comparação ) {</h4>
+    <h4>&nbsp;if ( comparação ) </h4>
     <h4>&emsp;comando para comparação verdadeira</h4>
     <h4>&emsp;Se necessário aninhar, usar if simples ou composto</h4>
     <h4>&nbsp;else {</h4>
@@ -121,7 +141,43 @@
     <hr>
 
     <!-- Criar aqui seu programa PHP -->
+            <H4>EXERCÍCIO</H4>
 
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Produto</th>
+                        <th>Estoque</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+
+            <tbody>
+            <tr>
+                        <td>Ultrabook ASUS</td>
+                        <td>
+                            
+                            <?php
+
+                                $a = 0;
+                                $b = 14;
+
+                                if($a < $b) {
+                                    echo "<span class=repor> Estoque insuficiente, é necessário comprar.</span>";
+                                } else {
+                                    echo "<span class=ok>Estoque suficiente, OK!</span>";
+                                }
+                                    
+
+                            ?>
+        
+                        </td>
+                        <td><div class="repor">URGENTE</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     
     <hr>
 
@@ -167,7 +223,33 @@
     </ul>
     <hr>
     
-    <!-- Criar aqui seu programa PHP -->
+    <!-- Criar aqui seu programa PHP -->\
+
+    <?php
+        // Esfiha
+        // Pastel
+        // Pizza
+        // Opção inválida
+
+        // Criar uma variável para receber uma das opções da lista. Iniciar com uma delas.
+        $opcao = "3";
+
+        // Montar uma estrutura encadeada que verifique qual a opção escolhida
+        if ($opcao == "1") {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Você pediu uma esfiha.";
+        } elseif ($opcao == "2") {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Você pediu um pastel.";
+        } elseif ($opcao == "3") {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Você pediu uma pizza.";
+        } else {
+            // Exibir o nome do produto pedido conforme a opção escolhida na variável.
+            echo "Opção inválida.";
+        }
+
+        ?>
     
     <hr>
 
@@ -202,6 +284,23 @@
     <hr>
 
     <!-- Criar aqui seu programa PHP -->
+
+    <?php
+$valor = 1;
+
+switch ($valor) {
+    case 1:
+        echo "A escolha é Pastel";
+        break;
+    case 2:
+        echo "A escolha é Esfiha";
+        break;
+    case 3:
+        echo "A escolha é Pizza";
+        break;
+
+}
+?>
     
     
     <!-- Rodapé -->
