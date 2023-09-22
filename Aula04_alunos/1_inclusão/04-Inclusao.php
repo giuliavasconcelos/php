@@ -1,5 +1,7 @@
 <!-- Fazendo a inclusão de um arquivo de programação -->
 
+<?php include "recursos.php"; ?>
+
 <!-- 1ª Digitação (Aqui) -->
 
 <!DOCTYPE html>
@@ -22,9 +24,13 @@
 
         <!-- 2ª Digitação (Aqui) -->
 
+        <h2 class="destaque"><?=ESCOLA?></h2>
+
         <!-- Recuperando o conteúdo da variável $curso definida em "recursos.php" -->
 
         <!-- 3ª Digitação (Aqui) -->
+
+        <p>Estamos fazendo o curso de <?=$curso?></p>
 
         <!-- Recuperando o conteúdo do array $tecnologia definido em "recursos.php" e criando uma lista com foreach -->
         <ul>
@@ -39,6 +45,8 @@
         
         <!-- 4ª Digitação (Aqui) -->
 
+        <p>O aluno Chapolin Colorado tem 25 anos e é: <?=verificaIdade(25)?> de idade</p>
+
         <hr>
 
         <!-- Recupera o conteudo do arquivo externo "textos.php" -->
@@ -47,6 +55,12 @@
             <!-- No caso de erros o required para tudo e o include não -->
             
             <!-- 5ª Digitação (Aqui) -->
+
+            <article>
+                <h2 class="destaque">Conteúdo adicional</h2>
+
+                <?php include "Textos.php" ?>
+            </article>
 
         </article>
         
