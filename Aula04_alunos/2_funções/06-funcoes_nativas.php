@@ -134,13 +134,13 @@ $stringBandas = implode(" | ", $bandas);
 <!-- Filtra indicando um preenchimento errado -->
     <h2>Filtros</h2>
 <?php
-$email = "ignacio@gmail.com.br";
-$ataque = "<script> document.body.innerHTML = 'Sou ráqui!! hahahah >.<' </script>";
+    $email = "ignacio@gmail.com.br";
+    $ataque = "<script> document.body.innerHTML = '<h1>Sou ráqui!! hahahah >.<</br>' </script>";
 
-// echo $ataque;
+    // echo $ataque;
+    $ataqueAnulado = filter_var($ataque, FILTER_SANITIZE_SPECIAL_CHARS);
 
-//  6ª Digitação (Aqui)
-
+    echo $ataqueAnulado;
 ?>
 
 
@@ -181,7 +181,15 @@ $senhaSegura = password_hash($senha, PASSWORD_DEFAULT);
 <hr>
 <!-- Como checar se a senha é a correta -->
 
-<!-- 7ª Digitação (Aqui)  -->
+<?php
+    $senhaDigitada = "123abc";
+
+    if(password_verify($senhaDigitada, $senhaSegura)) {
+        echo "Beleza!!! Senhas iguais...";
+    } else {
+        echo "Opa!!! Senha errada.";
+    }
+?>
     
 </body>
 </html>
