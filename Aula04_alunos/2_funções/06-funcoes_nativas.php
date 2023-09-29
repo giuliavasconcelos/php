@@ -16,18 +16,29 @@
 // Trim(param) -> Remove espaços antes e depois de strings
 $nome = "Ignacio Cunha        ";
 $nomeSemEspaco = trim($nome);
+$nome2 = "      Valmir      ";
 ?>
 
-<!-- 1ª Digitação (Aqui) -->
+<pre> <?=var_dump($nome)?> </pre>
+<pre> <?=var_dump(trim($nome))?> </pre>
+
+<p>Meu teste.</p>
+<pre> <?=var_dump($nome2)?> </pre>
+<pre> <?=var_dump(trim($nome2))?> </pre>
+
 
 <!-- ___________________________________________________________ -->
 <!-- Substitui um texto por outro-->
-<h3>str_replace</h3>
+<h3>Str_replace</h3>
 <?php
 $fraseFeia = "<p>Fulano é um bobão e xarope</p>";
 
 
-//  2ª Digitação (Aqui)
+$fraseBonita = str_replace(
+    ["bobão", "xarope"],
+    ["cara legal", "genial"],
+    $fraseFeia
+);
 
 
 echo $fraseFeia;
@@ -35,34 +46,87 @@ echo $fraseBonita;
 ?>
 <!-- ___________________________________________________________ -->
 <!-- Separa os texto através de um delimitador -->
-<h3>explode</h3>
+<h3>Explode</h3>
 <?php
 $linguagens = "HTML - CSS - JS";
 $arrayLinguagens = explode(" - ", $linguagens);
 
 ?>
 
-<!-- 3ª Digitação (Aqui) -->
+<pre> <?=var_dump($linguagens)?> </pre>
+<pre> <?=var_dump($arrayLinguagens)?> </pre>
+
+<!-- EXEMPLO -->
+<h3>Exemplo</h3>
+<?php
+$nome = "Giulia Vasconcelos";
+$linguagens = "Giulia - Vasconcelos";
+$arrayLinguagens = explode(" - ", $linguagens);
+?>
+
+<pre> <?=var_dump($nome)?> </pre>
+<pre> <?=var_dump($linguagens)?> </pre>
+<pre> <?=var_dump($arrayLinguagens)?> </pre>
 
 <!-- ___________________________________________________________ -->
 <hr>
     <h2>Arrays</h2>
-    <h3>implode()</h3>
+    <h3>Implode()</h3>
 
-<!-- 4ª Digitação (Aqui) -->
+<?php
+$bandas = ["Savage", "Nightwish", "Ghost"];
+$stringBandas = implode(" | ", $bandas);
+?>
 
 <pre> <?=var_dump($bandas)?> </pre>
 <pre> <?=var_dump($stringBandas)?> </pre>
 <!-- ___________________________________________________________ -->
 <!-- Simplifica a saída -->
-    <h3>extract()</h3>
+    <h3>Extract()</h3>
 
-<!-- 5ª Digitação (Aqui) -->
+<?php
+    $aluno = [
+        "id" => "Giulia",
+        "idade" => 17,
+        "genero" => "Feminino",
+        "cidade" => "Santo André"
+    ];
+
+    extract($aluno);
+    
+?>
+
 
 <p> <?=$id?> </p>
 <p> <?=$idade?> </p>
-<p> <?=$sexo?> </p>
+<p> <?=$genero?> </p>
 <p> <?=$cidade?> </p>
+
+
+<h3>Exemplo</h3>
+<h4>Desafio: Array com id, sua idade, número do seu sesi e nome da nossa classe Senai.</h4>
+
+
+
+
+
+<?php
+    $aluno = [
+        "id" => "Giulia",
+        "idade" => 17,
+        "sesi" => "221",
+        "sala" => "1DE"
+    ];
+
+    extract($aluno);
+    
+?>
+
+
+<p> <?=$id?> </p>
+<p> <?=$idade?> </p>
+<p> <?=$sesi?> </p>
+<p> <?=$sala?> </p>
 
 <!-- ___________________________________________________________ -->
 <hr>
